@@ -1,12 +1,17 @@
-from PyQt6.QtGui import QColor
+import locale
+
+from PyQt6 import QtGui
+from PyQt6.QtGui import QColor, QPainter, QPaintEvent
 from PyQt6.QtGui import QTextCharFormat, QIcon
-from PyQt6.QtCore import QDate
-from ui_oficial import Ui_Form
+from PyQt6.QtCore import QDate, QRect, Qt, QPoint
+# from PySide5.QtGui import QFont
+
+from ui_calendar import Ui_Form
 from datetime import date
-from PyQt6.QtWidgets import QWidget
+from PyQt6.QtWidgets import QWidget, QCalendarWidget
 from calendar_tests import conversor, get_days_of_month
 
-
+locale.setlocale(locale.LC_ALL, 'pt_BR.utf8')
 
 
 class My_widget(QWidget, Ui_Form):
@@ -23,6 +28,7 @@ class My_widget(QWidget, Ui_Form):
         format_inst.setBackground(QColor(137, 153, 255))
         self.calendarWidget.setDateTextFormat(date_to_change, format_inst)
 
+
     def is_dayoff(self, other_date):
         data_atual = date.today()
         if other_date > data_atual:
@@ -34,13 +40,12 @@ class My_widget(QWidget, Ui_Form):
         return result % 9
 
     def check_selected_date(self):
-        try:
-            date_selected = self.calendarWidget.selectedDate().toPyDate()
-            result = self.is_dayoff(date_selected)
-            self.label_3.setText(f'Esta data é seu {conversor[result]} na escala.')
-            # print(f'Esta data é seu {conversor[result]} na escala.')
-        except Exception as e:
-            print("Erro:", type(e), e)
+        date_selected = self.calendarWidget.selectedDate().toPyDate()
+        result = self.is_dayoff(date_selected)
+        # strftime transforma data selecionada em texto, e monta a frase de saída utilizando os termos do dicionário
+        # conversor, que transforma o resultado (número de 0 a 8) em um dia da escala.
+        date_plain_text = date_selected.strftime(f'O dia %d de %B de %Y é o seu {conversor[result]} na escala.')
+        self.label_3.setText(date_plain_text)
 
     def do_other(self):
         self.hide()

@@ -1,5 +1,5 @@
 from widget import My_widget
-from ui_botoes import Ui_MainWindow
+from ui_main_screen import Ui_MainWindow
 from PyQt6.QtWidgets import QMainWindow
 
 

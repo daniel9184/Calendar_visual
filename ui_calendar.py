@@ -7,7 +7,8 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtGui import QTextCharFormat, QIcon
+import icones
+
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -58,13 +59,13 @@ class Ui_Form(object):
 "    /* set text for button */\n"
 "    /*qproperty-text: &quot;&gt;&quot;;*/\n"
 "    margin-left:5px;\n"
-"    image: url(arrow-119-48.ico);\n"
+"image:{icon};\n"
 "}\n"
 "\n"
 "/* style for next month button ########################################### */\n"
 "#qt_calendar_nextmonth {\n"
 "    margin-right:5px;\n"
-f"    image: {QIcon('seta.ico')};\n"
+"    image: url(icons/dir.ico);\n"
 "    /* qproperty-text: &quot;&gt;&quot;; */\n"
 "}\n"
 "#qt_calendar_prevmonth:hover, \n"
@@ -119,12 +120,12 @@ f"    image: {QIcon('seta.ico')};\n"
 "/* Style for year change buttons ######################################*/\n"
 "\n"
 "#qt_calendar_yearedit::up-button { \n"
-"    image: url(:/icon/arrow-151-48.ico);\n"
+"    image: url(:/icons/cima.ico);\n"
 "    subcontrol-position: right;\n"
 "}\n"
 "\n"
 "#qt_calendar_yearedit::down-button { \n"
-"    image: url(:/icon/arrow-213-48.ico);\n"
+"    image: url(:/icons/baixo.ico);\n"
 "    subcontrol-position: left; \n"
 "}\n"
 "\n"
@@ -229,14 +230,14 @@ f"    image: {QIcon('seta.ico')};\n"
 "    /*qproperty-text: &quot;&gt;&quot;;*/\n"
 "    margin-top: 4px;\n"
 "    margin-left: 4px;\n"
-"    image: url(:/icons/arrow-119-48.ico);\n"
+"    image: url(:/icons/esq.ico);\n"
 "}\n"
 "\n"
 "/* style for next month button ########################################### */\n"
 "#qt_calendar_nextmonth {\n"
 "    margin-top: 4px;\n"
 "    margin-right: 4px;\n"
-"    image: url(:/icons/arrow-19-48.ico);\n"
+"    image: url(:/icons/dir.ico);\n"
 "    /* qproperty-text: &quot;&gt;&quot;; */\n"
 "}\n"
 "#qt_calendar_prevmonth:hover{\n"
@@ -304,12 +305,12 @@ f"    image: {QIcon('seta.ico')};\n"
 "/* Style for year change buttons ######################################*/\n"
 "\n"
 "#qt_calendar_yearedit::up-button { \n"
-"    image: url(:/icons/arrow-151-48.ico);\n"
+"    image: url(:/icons/cima.ico);\n"
 "    subcontrol-position: right;\n"
 "}\n"
 "\n"
 "#qt_calendar_yearedit::down-button { \n"
-"    image: url(:/icons/arrow-213-48.ico);\n"
+"    image: url(:/icons/baixo.ico);\n"
 "    subcontrol-position: left; \n"
 "}\n"
 "\n"
@@ -383,7 +384,7 @@ f"    image: {QIcon('seta.ico')};\n"
         self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(parent=Form)
-        self.label_3.setGeometry(QtCore.QRect(80, 370, 431, 20))
+        self.label_3.setGeometry(QtCore.QRect(0, 370, 571, 20))
         self.label_3.setStyleSheet("font: 11pt \"Segoe UI\";\n"
 "font: italic 11pt \"Segoe UI\";")
         self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -399,6 +400,6 @@ f"    image: {QIcon('seta.ico')};\n"
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Escala Personalizada"))
         self.label_2.setText(_translate("Form", "Ao selecionar uma data, voce pode checar\n"
-"exatamente em qual dia da escala ela est├í! "))
+"exatamente em qual dia da escala ela está!"))
         self.label_3.setText(_translate("Form", "Os dias de folga estao destacados em colorido."))
-        self.pushButton.setText(_translate("Form", "   Voltar"))
+        self.pushButton.setText(_translate("Form", "Voltar"))
