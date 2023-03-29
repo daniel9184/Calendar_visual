@@ -1,6 +1,6 @@
-from widget import My_widget
-from ui_main_screen import Ui_MainWindow
 from PyQt6.QtWidgets import QMainWindow
+from config_calendar import My_widget
+from ui_mainscreen import Ui_MainWindow
 
 
 class botoes_tela(QMainWindow, Ui_MainWindow):
@@ -8,6 +8,8 @@ class botoes_tela(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.calendar = My_widget()
+        # self.setWindowIcon(QIcon('icons/calendar.svg'))
+        self.setWindowTitle('Escala Personalizada')
         self.pushButton_1.clicked.connect(self.button1)
         self.pushButton_2.clicked.connect(self.button2)
         self.pushButton_3.clicked.connect(self.button3)

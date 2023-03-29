@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Escala Personalizada</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="icons/recursos.qrc">
+    <normaloff>:/calendar.ico</normaloff>:/calendar.ico</iconset>
+  </property>
   <property name="windowOpacity">
    <double>1.000000000000000</double>
   </property>
@@ -251,14 +255,14 @@ QCalendarWidget QWidget {
 	/*qproperty-text: &amp;quot;&amp;gt;&amp;quot;;*/
 	margin-top: 4px;
 	margin-left: 4px;
-	image: url(:/icons/esq.ico);
+	image: url(:/esq.ico);
 }
 
 /* style for next month button ########################################### */
 #qt_calendar_nextmonth {
 	margin-top: 4px;
 	margin-right: 4px;
-	image: url(:/icons/dir.ico);
+	image: url(:/dir.ico);
     /* qproperty-text: &amp;quot;&amp;gt;&amp;quot;; */
 }
 #qt_calendar_prevmonth:hover{
@@ -326,12 +330,12 @@ QCalendarWidget QWidget {
 /* Style for year change buttons ######################################*/
 
 #qt_calendar_yearedit::up-button { 
-	image: url(:/icons/cima.ico);
+	image: url(:/cima.ico);
     subcontrol-position: right;
 }
 
 #qt_calendar_yearedit::down-button { 
-	image: url(:/icons/baixo.ico);
+	image: url(:/baixo.ico);
     subcontrol-position: left; 
 }
 
@@ -424,7 +428,7 @@ QCalendarWidget QWidget {
    </property>
    <property name="text">
     <string>Ao selecionar uma data, voce pode checar
-exatamente em qual dia da escala ela está! </string>
+exatamente em qual dia da escala ela está!</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -459,13 +463,32 @@ font: italic 11pt &quot;Segoe UI&quot;;</string>
      <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">padding: 30px;
+</string>
+   </property>
    <property name="text">
-    <string>Voltar</string>
+    <string>  Voltar</string>
+   </property>
+   <property name="icon">
+    <iconset resource="icons/recursos.qrc">
+     <normaloff>:/esq.ico</normaloff>:/esq.ico</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>1300</height>
+    </size>
    </property>
   </widget>
  </widget>
  <resources>
-  <include location="ala.qrc"/>
+  <include location="icons/recursos.qrc"/>
  </resources>
  <connections/>
 </ui>

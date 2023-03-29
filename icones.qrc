@@ -1,8 +1,0 @@
-<RCC>
-  <qresource>
-    <file>icons/baixo.ico</file>
-    <file>icons/cima.ico</file>
-    <file>icons/dir.ico</file>
-    <file>icons/esq.ico</file>
-  </qresource>
-</RCC>

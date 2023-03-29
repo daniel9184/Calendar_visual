@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QApplication
-from firstscreen_config import botoes_tela
+from config_mainscreen import botoes_tela
 import sys
 
 app = QApplication(sys.argv)

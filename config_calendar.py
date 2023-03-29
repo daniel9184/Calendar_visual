@@ -1,16 +1,10 @@
-import locale
-
-from PyQt6 import QtGui
-from PyQt6.QtGui import QColor, QPainter, QPaintEvent
-from PyQt6.QtGui import QTextCharFormat, QIcon
-from PyQt6.QtCore import QDate, QRect, Qt, QPoint
-# from PySide5.QtGui import QFont
-
-from ui_calendar import Ui_Form
+from PyQt6.QtGui import QColor, QTextCharFormat
+from PyQt6.QtCore import QDate
+from PyQt6.QtWidgets import QWidget
 from datetime import date
-from PyQt6.QtWidgets import QWidget, QCalendarWidget
-from calendar_tests import conversor, get_days_of_month
-
+from ui_calendar import Ui_Form
+from functions_and_dict import conversor, get_days_of_month
+import locale
 locale.setlocale(locale.LC_ALL, 'pt_BR.utf8')
 
 
@@ -18,16 +12,16 @@ class My_widget(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        # self.setWindowIcon(QIcon('icons/calendar.svg'))
         self.current_date = self.calendarWidget.selectedDate().toPyDate()
         self.current_day_of_scale = None
         self.pushButton.clicked.connect(self.hide)
-        self.pushButton.setIcon(QIcon('seta.ico'))
+        # self.pushButton.setIcon(QIcon('icons/esq.ico'))
 
     def change_background(self, date_to_change):
         format_inst = QTextCharFormat()
         format_inst.setBackground(QColor(137, 153, 255))
         self.calendarWidget.setDateTextFormat(date_to_change, format_inst)
-
 
     def is_dayoff(self, other_date):
         data_atual = date.today()
