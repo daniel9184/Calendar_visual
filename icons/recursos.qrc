@@ -1,0 +1,9 @@
+<RCC>
+  <qresource>
+    <file>baixo.ico</file>
+    <file>cima.ico</file>
+    <file>calendar.ico</file>
+    <file>dir.ico</file>
+    <file>esq.ico</file>
+  </qresource>
+</RCC>
